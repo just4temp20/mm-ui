@@ -215,7 +215,7 @@ a.prototype = {
   },
 
   gameover: function () {
-    this.disable(!!0)
+    // this.disable(!!0)
     // this.$el.trigger('gameover', [this.stateMap.curIndex])
     this.configMap.onOver([this.stateMap.curIndex])
   }

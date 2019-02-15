@@ -6,6 +6,9 @@ import Style from './modules/style'
 import Button from './modules/button'
 import Background from './modules/background'
 import ActWheel from './modules/act-wheel'
+import ActRule from './modules/act-rule'
+import ActPrize from './modules/act-prize'
+import GeneralText from './modules/general-text'
 // import Loading from './modules/loading'
 // import Tip from './modules/tip'
 // import Toolbar from './modules/toolbar'
@@ -75,6 +78,9 @@ export {
   Button,
   Background,
   ActWheel,
+  ActRule,
+  ActPrize,
+  GeneralText,
   // Loading,
   // Tip,
   // Toolbar,

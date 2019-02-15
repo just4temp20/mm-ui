@@ -10,39 +10,70 @@
   <link rel="shortcut icon" type="images/x-icon" href="//webapp.didistatic.com/static/webapp/shield/Cube-UI_logo.ico">
 </head>
 <body>
-  <div id="app"></div>
-  <!--模块信息-->
-  <script>
-    /* eslint-disable */
-    window.ModuleInfo = [
-      {
-        "moduleId": 21,
-        "sortNo": 2,
-        "exProperties": "{\"fields\":{\"image\":\"https://yun.tuipear.com/mami-media/img/1cgvust9aq.jpg?x-oss-process=image/format,webp\",\"color\":\"#B81B2B\"},\"isEditZIndex\":false}",
-        "moduleName": "cube-background",
-        "moduleNameCN": "背景"
-      },
-      {
-        "moduleId": 18,
-        "sortNo": 1,
-        "exProperties": "{\"fields\":{\"price\":[{\"index\":\"0\",\"id\":\"100\",\"name\":\"谢谢参与\",\"pic\":\"http://yun.tuipear.com/mami-media/img/9ua83ownh7.png?x-oss-process=image/format,webp\"},{\"index\":\"1\",\"id\":\"201\",\"name\":\"华为畅享7\",\"pic\":\"http://yun.tuipear.com/mami-media/img/h74551e9p0.png?x-oss-process=image/format,webp\"},{\"index\":\"2\",\"id\":\"202\",\"name\":\"KFC现磨拿铁\",\"pic\":\"http://yun.tuipear.com/mami-media/img/oo3kqduc0v.png?x-oss-process=image/format,webp\"},{\"index\":\"3\",\"id\":\"203\",\"name\":\"幸运福袋\",\"pic\":\"http://yun.tuipear.com/mami-media/img/3ei4q3mll0.png?x-oss-process=image/format,webp\"},{\"index\":\"4\",\"id\":\"204\",\"name\":\"KFC烤翅\",\"pic\":\"http://yun.tuipear.com/mami-media/img/elu6chzlrn.png?x-oss-process=image/format,webp\"},{\"index\":\"5\",\"id\":\"205\",\"name\":\"WOW双堡套餐\",\"pic\":\"http://yun.tuipear.com/mami-media/img/dk5jh6yhso.png?x-oss-process=image/format,webp\"}],\"actId\":\"0000000007\",\"imgUrl\":{\"turntable\":\"http://yun.tuipear.com/mami-media/img/dvd4q0hz0p.png?x-oss-process=image/format,webp\",\"point\":\"http://yun.tuipear.com/mami-media/img/7kbe8oax4u.png?x-oss-process=image/format,webp\",\"button\":\"http://yun.tuipear.com/mami-media/img/l9y7mk7yko.png?x-oss-process=image/format,webp\",\"color\":\"#e85e08\"},\"dialogTips\":{\"award\":\"恭喜你获得了\",\"unAward\":\"很遗憾\"},\"wheelConfig\":{\"clockwise\":true,\"sections\":\"6\",\"fixAngle\":\"5\",\"duration\":\"2000\",\"minRotate\":\"3\"}},\"style\":{\"text\":{\"color\":\"#000\",\"fontSize\":\"30px\",\"fontWeight\":\"normal\",\"fontStyle\":\"normal\",\"textAlign\":\"left\",\"textDecoration\":\"none\"},\"basic\":{\"top\":\"199px\",\"width\":\"320px\",\"height\":\"300px\",\"zIndex\":\"100\",\"left\":\"0px\"}},\"isEditZIndex\":false}",
-        "moduleName": "cube-act-wheel",
-        "moduleNameCN": "活动-大转盘"
-      },
-
-    ]
-    /* eslint-enable */
-  </script>
-  <!--Vue-->
-  <!--<script src="https://cdn.bootcss.com/vue/2.5.22/vue.min.js"></script>-->
-  <!--mm-ui局部引入-->
-  <!--<link rel="stylesheet" href="/static/mm-ui/background/background.min.css">
-  <script src="/static/mm-ui/background/background.min.js"></script>
-  <link rel="stylesheet" href="/static/mm-ui/act-wheel/act-wheel.min.css">
-  <script src="/static/mm-ui/act-wheel/act-wheel.min.js"></script>
-  <script>
-    window.Vue.use(window.cube['background'])
-    window.Vue.use(window.cube['act-wheel'])
-  </script>-->
+<div id="app"></div>
+<!--模块信息-->
+<script>
+  /* eslint-disable */
+  window.ModuleInfo = [
+    {
+      "moduleId": 21,
+      "sortNo": 2,
+      "exProperties": "{\"fields\":{\"image\":\"https://yun.tuipear.com/mami-media/img/1cgvust9aq.jpg?x-oss-process=image/format,webp\",\"color\":\"#B81B2B\"},\"isEditZIndex\":false}",
+      "moduleName": "cube-background",
+      "moduleNameCN": "背景"
+    },
+    /*{
+      "moduleId": 18,
+      "sortNo": 1,
+      "exProperties": "{\"fields\":{\"price\":[{\"index\":\"0\",\"id\":\"100\",\"name\":\"谢谢参与\",\"pic\":\"http://yun.tuipear.com/mami-media/img/9ua83ownh7.png?x-oss-process=image/format,webp\"},{\"index\":\"1\",\"id\":\"201\",\"name\":\"华为畅享7\",\"pic\":\"http://yun.tuipear.com/mami-media/img/h74551e9p0.png?x-oss-process=image/format,webp\"},{\"index\":\"2\",\"id\":\"202\",\"name\":\"KFC现磨拿铁\",\"pic\":\"http://yun.tuipear.com/mami-media/img/oo3kqduc0v.png?x-oss-process=image/format,webp\"},{\"index\":\"3\",\"id\":\"203\",\"name\":\"幸运福袋\",\"pic\":\"http://yun.tuipear.com/mami-media/img/3ei4q3mll0.png?x-oss-process=image/format,webp\"},{\"index\":\"4\",\"id\":\"204\",\"name\":\"KFC烤翅\",\"pic\":\"http://yun.tuipear.com/mami-media/img/elu6chzlrn.png?x-oss-process=image/format,webp\"},{\"index\":\"5\",\"id\":\"205\",\"name\":\"WOW双堡套餐\",\"pic\":\"http://yun.tuipear.com/mami-media/img/dk5jh6yhso.png?x-oss-process=image/format,webp\"}],\"actId\":\"0000000007\",\"imgUrl\":{\"turntable\":\"http://yun.tuipear.com/mami-media/img/dvd4q0hz0p.png?x-oss-process=image/format,webp\",\"point\":\"http://yun.tuipear.com/mami-media/img/7kbe8oax4u.png?x-oss-process=image/format,webp\",\"button\":\"http://yun.tuipear.com/mami-media/img/l9y7mk7yko.png?x-oss-process=image/format,webp\",\"color\":\"#e85e08\"},\"dialogTips\":{\"award\":\"恭喜你获得了\",\"unAward\":\"很遗憾\"},\"wheelConfig\":{\"clockwise\":true,\"sections\":\"6\",\"fixAngle\":\"5\",\"duration\":\"2000\",\"minRotate\":\"3\"}},\"style\":{\"text\":{\"color\":\"#000\",\"fontSize\":\"30px\",\"fontWeight\":\"normal\",\"fontStyle\":\"normal\",\"textAlign\":\"left\",\"textDecoration\":\"none\"},\"basic\":{\"top\":\"199px\",\"width\":\"320px\",\"height\":\"300px\",\"zIndex\":\"100\",\"left\":\"0px\"}},\"isEditZIndex\":false}",
+      "moduleName": "cube-act-wheel",
+      "moduleNameCN": "活动-大转盘"
+    },*/
+    {
+      "moduleId": 22,
+      "sortNo": 3,
+      "exProperties": "{\"fields\":{\"content\":\"&lt;p&gt;肯德基卖手机了？对！你没有听错——肯德基联手华为，为登陆中国市场30周年特别定制！&lt;/p&gt;&lt;p&gt;活动说明：参与活动即有机会和获得幸运奖，每天7次免费参与机会。此活动为概率中奖，奖品数量有限，祝好运！&lt;/p&gt;&lt;p&gt;惊喜一：肯德基纪念版华为畅享7手机&lt;/p&gt;&lt;p&gt;惊喜二：肯德基WOW双堡套餐兑换券&lt;br&gt;&lt;/p&gt;&lt;p&gt;惊喜三：肯德基新奥尔良烤翅兑换券&lt;br&gt;&lt;/p&gt;&lt;p&gt;惊喜四：肯德基中杯拿铁兑换券&lt;br&gt;&lt;/p&gt;&lt;p&gt;惊喜五：幸运福袋&lt;br&gt;&lt;/p&gt;&lt;p&gt;－－－－－－－－－－－－－－－－&lt;br&gt;&lt;/p&gt;&lt;p&gt;重要声明：&lt;/p&gt;&lt;p&gt;1、实物类奖品在活动结束后5-10个工作日安排发货，请耐心等待！&lt;/p&gt;&lt;p&gt;2、优惠券类奖品的使用规则详见每个优惠券的介绍页；&lt;/p&gt;&lt;p&gt;3、请兑换后仔细阅读使用流程，如有疑问，可直接联系客服专线：400-080-6659&lt;/p&gt;&lt;p&gt;或客服QQ：400-080-6659（工作日9:00至18:00）；&lt;/p&gt;&lt;p&gt;4、一定概率会获得金币收入，提现需下载客户端（当日收入金币需当日下载提现有效）；&lt;/p&gt;&lt;p&gt;5、通过非法途径获得奖品的，主办方有权不提供奖品。&lt;/p&gt;\",\"attachment\":{\"title\":\"更多概率说明\",\"content\":\"&lt;p&gt;1.肯德基纪念版华为畅享7手机共2台，中奖概率为0.01%&lt;/p&gt;&lt;p&gt;2.肯德基WOW双堡套餐兑换券共20份，中奖概率为0.1%&lt;/p&gt;&lt;p&gt;3.肯德基新奥尔良烤翅兑换券共30份，中奖概率为0.3%&lt;/p&gt;&lt;p&gt;4.肯德基中杯拿铁兑换券共30份，中奖概率为0.3%&lt;/p&gt;\"}},\"style\":{\"basic\":{\"width\":\"100px\",\"height\":\"35px\",\"left\":\"9px\",\"top\":\"15px\",\"zIndex\":\"10\"}},\"isEditZIndex\":false}",
+      "moduleName": "cube-act-rule",
+      "moduleNameCN": "活动规则"
+    },
+    {
+      "moduleId": 23,
+      "sortNo": 4,
+      "exProperties": "{\"fields\":{\"actId\":\"0000000007\"},\"style\":{\"basic\":{\"width\":\"100px\",\"height\":\"100px\",\"left\":\"220px\",\"top\":\"4px\",\"zIndex\":\"10\"}},\"isEditZIndex\":false}",
+      "moduleName": "cube-act-prize",
+      "moduleNameCN": "活动奖品"
+    },
+    {
+      "moduleId": 13,
+      "sortNo": 5,
+      "exProperties": "{\"fields\":{\"text\":{\"name\":\"通用文本\",\"default\":\"点我赢大奖\",\"key\":\"\"},\"forwardUrl\":{\"name\":\"URL\",\"default\":\"http://m.baidu.com\",\"key\":\"\"}},\"fieldsDefault\":{},\"style\":{\"text\":{\"color\":\"#5E1010\",\"fontSize\":\"26px\",\"fontWeight\":\"normal\",\"fontStyle\":\"normal\",\"textAlign\":\"center\",\"textDecoration\":\"none\"},\"basic\":{\"left\":\"0px\",\"top\":\"139px\",\"width\":\"320px\",\"height\":\"40px\",\"zIndex\":\"100\",\"originWidth\":\"287px\"}},\"isEditZIndex\":false}",
+      "moduleName": "cube-general-text",
+      "moduleJs": "../basic/js/components/generalText/index.min.js",
+      "moduleType": 999,
+      "moduleNameCN": "通用文本卡片"
+    }
+  ]
+  /* eslint-enable */
+</script>
+<!--Vue-->
+<script src="https://cdn.bootcss.com/vue/2.5.22/vue.min.js"></script>
+<!--mm-ui局部引入-->
+<link rel="stylesheet" href="/static/mm-ui/background/background.min.css">
+<script src="/static/mm-ui/background/background.min.js"></script>
+<!--<link rel="stylesheet" href="/static/mm-ui/act-wheel/act-wheel.min.css">-->
+<!--<script src="/static/mm-ui/act-wheel/act-wheel.min.js"></script>-->
+<link rel="stylesheet" href="/static/mm-ui/act-rule/act-rule.min.css">
+<script src="/static/mm-ui/act-rule/act-rule.min.js"></script>
+<link rel="stylesheet" href="/static/mm-ui/act-prize/act-prize.min.css">
+<script src="/static/mm-ui/act-prize/act-prize.min.js"></script>
+<link rel="stylesheet" href="/static/mm-ui/general-text/general-text.min.css">
+<script src="/static/mm-ui/general-text/general-text.min.js"></script>
+<script>
+  window.Vue.use(window.cube['background'])
+  // window.Vue.use(window.cube['act-wheel'])
+  window.Vue.use(window.cube['act-rule'])
+  window.Vue.use(window.cube['act-prize'])
+  window.Vue.use(window.cube['general-text'])
+</script>
 </body>
 </html>

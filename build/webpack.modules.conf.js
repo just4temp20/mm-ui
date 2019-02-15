@@ -8,7 +8,7 @@ var baseWebpackConfig = require('./webpack.base.conf')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 //  ww:只考虑我的module
-var regName = new RegExp(/button|recycle-list|index-list|background|act-wheel/, "gi")
+var regName = new RegExp(/button|recycle-list|index-list|background|act-wheel|act-rule|act-prize|general-text/, "gi")
 
 
 var modules = {}
@@ -23,9 +23,13 @@ var files = fs.readdirSync(cPath)
 //     }
 //   })
 // }
+// console.log('ww============================')
+// console.log(files)
 if (files) {
   files.forEach(function (name) {
-    if(regName.test(name)){
+    if(/button|recycle-list|index-list|background|act-wheel|act-rule|act-prize|general-text/gi.test(name)){
+      console.log('ww============================')
+      console.log(name)
       var p = path.join(cPath, name)
       if (fs.statSync(p).isDirectory()) {
         modules[name] = p
@@ -36,7 +40,6 @@ if (files) {
 
 // console.log('------------modules:--------------')
 // console.log(modules)
-
 var webpackConfig = merge(baseWebpackConfig, {
   entry: modules,
   module: {

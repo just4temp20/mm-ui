@@ -16,6 +16,10 @@ import Cube from '../src/index'
 // var Vue = window.Vue
 Vue.use(Cube)
 ```
+3、若要打包，直接执行demo-build
+```shell
+cnpm run demo-build
+```
 
 ### 按需引入
 1、在/example/index.html里打开按需引入的部分
@@ -43,6 +47,10 @@ npm run build
 ```
 4、把生成好的lib包里面的内容复制到根目录下新建的static/mm-ui下
 
+5、若要打包，执行
+```shell
+npm run demo-build
+```
 
 ### Install
 请用cnpm安装
@@ -66,7 +74,8 @@ npm run build是用于生成mm-ui的
 npm run demo-build是用于生成速推的
 
 ### 坑
-不要用stylu,dev编译时很慢，严重影响开发效率
+1、不要用stylu,dev编译时很慢，严重影响开发效率
+2、用new RegExp()为何会时而true时而false的？直接用//gi.test就不会
 
 Recommend use the [CLI tools](https://github.com/cube-ui/cube-template) base on [vue-cli](https://github.com/vuejs/vue-cli) to init the config and base code:
 

@@ -7,7 +7,7 @@
           <!--外围背景-->
           <div class="radius-group"></div>
           <!--外围星星-->
-          <div class="radius-bg default" :class="toggle" ></div>
+          <div class="radius-bg default" :class="toggle"></div>
           <!--奖品-->
           <div id="circle" class="zw-rotary-dial" style="transform: rotate3d(0, 0, 1, 0);">
             <div class="circle-box" id="circle-box">
@@ -31,8 +31,8 @@
         </div>
       </div>
     </div>
-    <!--中奖弹窗-->
-    <div class="J_modalShowPrize coupon-modal-showPrize" v-show="isShowDrawDialog" >
+    <!--中奖提示弹窗-->
+    <div class="J_modalShowPrize coupon-modal-showPrize" v-show="isShowDrawDialog">
       <div class="coupon-modal-animate">
         <div class="coupon-modal-showPrize-dialog ">
           <span class="close coupon-modal-close" v-on:click="closeDrawDialog"></span>
@@ -56,21 +56,36 @@
               </div>
             </div>
             <div class="body-footer">
-              <button type="button" class="J_btnCoupon coupon-use" v-on:click="closeDrawDialog"><span class="wordNum-four">立即收下</span></button>
+              <button type="button" class="J_btnCoupon coupon-use" v-on:click="closeDrawDialog"><span
+                class="wordNum-four">立即收下</span></button>
             </div>
           </div>
 
         </div>
       </div>
     </div>
-    <!--异常弹窗-->
+    <!--异常提示弹窗-->
     <div class="db-msg-modal" v-show="isShowErrDialog">
       <div class="msg-modal-wrapper">
-        <div class="msg-modal-header"><i class="msg-modal-close" v-on:click="closeErrDialog"></i><h4 class="msg-title">噢哦，网络解析错误！</h4>
+        <div class="msg-modal-header"><i class="msg-modal-close" v-on:click="closeErrDialog"></i><h4 class="msg-title">
+          {{errTips1}}</h4>
           <p class="msg-tip">再试一遍吧~</p></div>
         <div class="msg-modal-section"><img src="//yun.tuipear.com/h5/activity/showModal/1.0/networkError.png">
         </div>
         <div class="msg-modal-footer"><a href="javascript:;" class="msg-btn" v-on:click="closeErrDialog">再来一次</a></div>
+      </div>
+    </div>
+    <!--登录提示弹窗-->
+    <div class="db-msg-modal" v-show="isShowLoginDialog">
+      <div class="msg-modal-wrapper">
+        <div class="msg-modal-header"><i class="msg-modal-close" v-on:click="closeLoginDialog"></i><h4
+          class="msg-title">
+          您还没有登录哦！</h4>
+          <!--<p class="msg-tip">再试一遍吧~</p>-->
+        </div>
+        <div class="msg-modal-section"><img src="//yun.tuipear.com/h5/activity/showModal/1.0/networkError.png">
+        </div>
+        <div class="msg-modal-footer"><a href="javascript:;" class="msg-btn" v-on:click="toLogin">登录</a></div>
       </div>
     </div>
   </div>
@@ -79,10 +94,10 @@
 <script type="text/ecmascript-6">
   import $ from 'jquery'
   import Rotary from './actWheel'
-  import Utils from './utils'
+  import {CalcStyle, RandomFrom, ChangeUrlArg} from '@/common/utils/utils'
   import Axios from 'axios'
   import Api from '@/data/api'
-  // import '@/data/mock'
+  import '@/data/mock'
 
   const COMPONENT_NAME = 'cube-act-wheel'
 
@@ -115,8 +130,10 @@
         taskTimer: null,
 
         //弹窗
-        isShowDrawDialog: false,  //中奖弹窗
-        isShowErrDialog: false,  //异常弹窗
+        isShowDrawDialog: false,  // 中奖提示弹窗
+        isShowErrDialog: false,  // 异常提示弹窗
+        isShowLoginDialog: false,  // 登录提示窗
+        errTips1: '噢哦，网络解析错误！',  // 异常提示文案1
 
         //中奖信息
         awardName: '',  //奖品名
@@ -124,8 +141,7 @@
         awardTips: '',
 
         //为了复用PC端代码
-        from: 'preview',
-        isDebug: !!0  //调试模式
+        from: 'preview'
       }
     },
     computed: {
@@ -135,7 +151,7 @@
           // delete oStyle.width;
           // delete oStyle.height;
           // delete oStyle.left;
-          return Utils.calcStyle(oStyle)
+          return CalcStyle(oStyle)
           // return oStyle
         } else {
           return {}
@@ -143,7 +159,7 @@
       },  //外围的圈圈的样式
       styleText() {
         if (this.from === 'preview') {
-          return Utils.calcStyle(this.config.style.text)
+          return CalcStyle(this.config.style.text)
         } else {
           return {}
         }
@@ -163,24 +179,25 @@
       }
     },
     methods: {
-      //token
+      // 利用sessionStorage里的mmwaptoken判断登录状态
       validateCode() {
         // return window.sessionStorage.getItem('mmwaptoken')
         return '123456'
         /*'123456'*/
       },
+      // 利用id计算是奖品数组中的第几个奖品
       calcWheelIndex(id) {
+        console.log(id)
         var array = this.config.fields.price.map(function (value, index, array) {
-          return +value.id
+          return value.id
         })
-
         var index = array.indexOf(id)
         if (~index === 0) {
-          index = Utils.randomFrom(0, array.length - 1)
+          index = RandomFrom(0, array.length - 1)
         }
         return index
-        /*index*/
       },
+      // 是否登录
       isLogin() {
         let _this = this
         return new Promise((resolve, reject) => {
@@ -193,15 +210,11 @@
           }
         })
       },
-      clickDrawBtn() {
-        this.isLogin()
-          .then(res => {
-
-          })
-          .catch(err => {
-            console.log(err)
-          })
+      // 跳转到登录页
+      toLogin() {
+        window.location.href = 'baidu.com'
       },
+      // 点击抽奖按钮
       toDraw() {
         let _this = this
         return new Promise((resolve, reject) => {
@@ -221,7 +234,7 @@
             )
         })
       },
-      //任务定时器
+      // 任务定时器
       startTimer() {
         /* eslint-disable */
         let timeout = arguments[0] && arguments[0].time || 500
@@ -243,7 +256,7 @@
         this.taskTimer = null
         this.toggle = 'end'
       },
-      //弹窗
+      // 提示弹窗
       openDrawDialog() {
         this.isShowDrawDialog = true
       },
@@ -252,24 +265,35 @@
         this.startTimer()
         this.isShowDrawDialog = false
       },
-      openErrDialog() {
+      openErrDialog(msg) {
+        if (msg) this.errTips1 = msg
         this.isShowErrDialog = true
+      },
+      openLoginDialog() {
+        this.isShowLoginDialog = true
       },
       closeErrDialog() {
         this.isShowErrDialog = false
       },
-      //未中奖关键字判断
+      closeLoginDialog() {
+        this.isShowLoginDialog = false
+      },
+      // 未中奖关键字判断
       isUnAwardKeyWord(word) {
         return /谢谢|参与|遗憾|下次/gi.test(word)
       },
+      // 重新加载转盘
+      refresh() {
+        this.rotary.init({})
+      },
+      // utils
+      // 添加样式
       addStyle(style) {
         var styleForBackground = document.createElement('style');
         (document.head || document.body).appendChild(styleForBackground)
         styleForBackground.innerText = style
       },
-      refresh() {
-        this.rotary.init({})
-      },
+      // 获取url中的key对应的value
       getParam(name) {
         var value = window.location.search.match(new RegExp('[?&]' + name + '=([^&]*)(&?)', 'i'))
         value = value ? decodeURIComponent(value[1]) : ''
@@ -277,10 +301,6 @@
       }
     },
     created() {
-      //调试模式
-      if (this.getParam('db')) {
-        this.isDebug = !!1
-      }
       this.addStyle(`
             .db-content .point {
                 background-image: url(${this.imgUrl.point}) !important;
@@ -298,7 +318,7 @@
     },
     mounted() {
       let _this = this
-      //  初始化大转盘
+      // 初始化转盘
       this.rotary = new Rotary('.zw-rotary', {
         clockwise: this.wheelConfig.clockwise,  //转动方向（是否顺时针）
         sections: this.wheelConfig.sections,  //宫格数量（单位：个）
@@ -313,12 +333,11 @@
               _this.toDraw()
                 .then(res => {
                   if (res.data.code === 0) {
-                    //中奖奖品ID
+                    // 中奖奖品id
                     var awardId = res.data.data.awardId
-                    //中奖奖品对应转盘第几个位置
                     var awardIndex = _this.calcWheelIndex(awardId)
                     console.log('awardIndex=' + awardIndex)
-                    //中奖奖品名字
+                    // 中奖奖品名字
                     _this.awardName = _this.config.fields.price[awardIndex].name || res.data.data.name
                     _this.awardImg = _this.config.fields.price[awardIndex].pic
                     if (_this.isUnAwardKeyWord(_this.awardName)) {
@@ -338,25 +357,27 @@
                     //异常
                     if (res.data.code === 9999) {
                       //未登录
-                      _this.openErrDialog()
+                      _this.openLoginDialog()
                     } else {
                       //其他异常
-                      _this.openErrDialog()
+                      _this.openErrDialog(res.data.msg)
                     }
+                    //开锁抽奖按钮
+                    _this.rotary.disable(!!0)
                   }
                 })
                 .catch(err => {
                   console.log(err)
                   _this.openErrDialog()
-                  // _this.rotary.disable(false)
+                  //开锁抽奖按钮
+                  _this.rotary.disable(false)
                 })
             })
             .catch(err => {
               console.log(err)
-              window.location.href = Utils.changeUrlArg('./login.html', 'backurl', encodeURIComponent(window.location.href))
+              window.location.href = ChangeUrlArg('./login.html', 'backurl', encodeURIComponent(window.location.href))
             })
             .finally(() => {
-              //开锁抽奖按钮
             })
         },
         onOver: function (e) {
@@ -365,10 +386,12 @@
           //中奖弹窗
           setTimeout(() => {
             _this.openDrawDialog()
+
+            _this.rotary.disable(!!0)
           }, 1000)
         }
       })
-      //启动任务定时器
+      // 启动任务定时器
       this.startTimer()
     }
   }
