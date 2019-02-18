@@ -27,4 +27,5 @@
 
   body
     background-color: #fff
+    font-size: 0
 </style>

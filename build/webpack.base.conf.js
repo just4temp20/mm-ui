@@ -10,7 +10,7 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-const allSource = [resolve('src'), resolve('example'), resolve('test'), resolve('document')]
+const allSource = [resolve('src'), resolve('example'), resolve('test'), resolve('document'), resolve('img')]
 
 module.exports = {
   output: {

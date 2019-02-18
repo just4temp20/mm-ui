@@ -7,6 +7,10 @@ let url = 'http://117.131.17.174:8083'  // 测试
 // /bis
 let urlBis = 'http://10.1.5.52:11020'  // 测试
 let api = {
+  titleBox: '/bis/index?com=title',
+  gridMultiple: '/bis/index?com=gridMultiple',
+  gridTwo: '/bis/index?com=grid2',
+
   sendMsg: '/promactivity/sms/sendMsg', //短验下发接口
   getKeyToken: '/promactivity/queryAct/getKeyToken', //获取getKeyToken
   executeH5: '/promactivity/activityH5/executeH5', //非登录用户（一般是H5输入手机号）领取接口
@@ -16,10 +20,9 @@ let api = {
   getActCount: '/bis/getActCount',  //活动次数
   //登录页
   sendMsg2: '/bis/send',  //获取短信验证码
-  login2: '/bis/checkSMS',  //登录
+  login2: '/bis/checkSMS'  //登录
   //即见即所得
-  gridMultiple: '/bis/index?com=gridMultiple',
-  title: '/bis/index?com=title'
+
 }
 
 for (let key in api) {

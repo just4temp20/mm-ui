@@ -1,0 +1,22 @@
+.card-grid {
+  width: 100%;
+  box-sizing: border-box;
+}
+.card-grid ul {
+  display: flex;
+}
+.card-grid ul li {
+  flex: 1;
+  padding: 0.1rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+.card-grid ul li.hide {
+  visibility: hidden;
+}
+.card-grid ul li img {
+  width: 100%;
+  max-width: 0.5rem;
+  display: block;
+  margin: 0 auto 0.05rem auto;
+}

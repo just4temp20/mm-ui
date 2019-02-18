@@ -9,6 +9,9 @@ import ActWheel from './modules/act-wheel'
 import ActRule from './modules/act-rule'
 import ActPrize from './modules/act-prize'
 import GeneralText from './modules/general-text'
+import TitleBox from './modules/title-box'
+import GridMultiple from './modules/grid-multiple'
+import GridTwo from './modules/grid-two'
 // import Loading from './modules/loading'
 // import Tip from './modules/tip'
 // import Toolbar from './modules/toolbar'
@@ -81,6 +84,9 @@ export {
   ActRule,
   ActPrize,
   GeneralText,
+  TitleBox,
+  GridMultiple,
+  GridTwo,
   // Loading,
   // Tip,
   // Toolbar,

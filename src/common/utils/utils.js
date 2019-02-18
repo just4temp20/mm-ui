@@ -86,10 +86,11 @@ export function Extend(des, src, override) {
   return des
 }
 
-/*export function uniqueFields(originFields) {
+// 获取某个对象key对应的value
+export function UniqueFields(originFields) {
   var fields = []
   for (var i in originFields) {
-    //检查去重
+    // 去重标志
     var flag = false
     for (var j = 0, len = fields.length; j < len; j++) {
       if (originFields[i].key === fields[j]) {
@@ -102,7 +103,7 @@ export function Extend(des, src, override) {
     }
   }
   return fields
-}*/
+}
 
 /**
  * 获取货架数据

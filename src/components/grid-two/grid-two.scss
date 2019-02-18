@@ -1,0 +1,53 @@
+$gray-border: #C0CCDA;
+
+.card-grid {
+  width: 100%;
+  box-sizing: border-box;
+  ul {
+    display: flex;
+    li {
+      flex: 1;
+      box-sizing: border-box;
+      text-align: center;
+
+      &.hide {
+        visibility: hidden;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+        margin: 0 auto 5px auto;
+      }
+
+      .mTitle {
+        font-weight: 700;
+        font-size: 12px !important;
+        line-height: 24px;
+      }
+
+      .sTitle {
+        font-size: 10px !important;
+        line-height: 1.4;
+      }
+    }
+  }
+  .chg-item {
+    padding: 10px 0;
+    text-align: center;
+    a {
+      cursor: pointer;
+    }
+  }
+  .icon-chg {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-right: 3px;
+    margin-top: -2px;
+  }
+}

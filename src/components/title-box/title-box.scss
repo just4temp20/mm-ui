@@ -1,0 +1,30 @@
+.card-title {
+  position: relative;
+  width: 100%;
+  padding: 0.1rem;
+  box-sizing: border-box;
+}
+.card-title .forward {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.1rem;
+  font-style: normal;
+  font-size: 0.1rem !important;
+}
+.card-title .delete {
+  position: absolute;
+  top: 0;
+  right: -0.13rem;
+  cursor: pointer;
+}
+.card-title h2 {
+  font-weight: 700;
+  color: #000;
+  font-size: 0.12rem !important;
+  line-height: 0.2rem;
+}
+.card-title p {
+  font-size: 0.1rem;
+  line-height: 0.18rem;
+  font-size: 0.1rem !important;
+}
