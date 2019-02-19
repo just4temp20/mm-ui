@@ -28,4 +28,8 @@
   body
     background-color: #fff
     font-size: 0
+
+  .m-module{
+    position: absolute
+  }
 </style>

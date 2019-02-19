@@ -1,12 +1,11 @@
 <template>
-  <div class="card-grid m-module" :style="styleBasic">
+  <div class="card-grid m-module" :style="info.style.basic">
     <ul>
       <li v-for="item in curGrids">
         <a :href="item.content[info.fields.forwardUrl.key]">
           <div>
             <img :src="item.content[info.fields.logo.key]||defaultImg">
-            <span class="mTitle" :style="info.style.mTitle">{{item.content[info.fields.mTitle.key]}}</span><br/>
-            <span class="sTitle" :style="info.style.sTitle">{{item.content[info.fields.sTitle.key]}}</span>
+            <span class="mTitle" :style="info.style.mTitle">{{item.content[info.fields.title.key]}}</span><br/>
           </div>
         </a>
       </li>
@@ -25,7 +24,7 @@
   import Axios from 'axios'
   import Api from '@/data/api'
 
-  const COMPONENT_NAME = 'cube-grid-two'
+  const COMPONENT_NAME = 'cube-grid-three'
 
   export default {
     name: COMPONENT_NAME,
@@ -119,9 +118,6 @@
         }
       }
     },
-    mounted() {
-      // this.getAllItem()
-    },
     methods: {
       /**
        * 按顺序更换
@@ -147,20 +143,6 @@
           this.curGrids = this.ids
         }
       },
-      /*getAllItem: function () {
-        if (JSON.stringify(this.config) !== '{}') {
-          this.$set(this, 'info', this.config || this.info)
-          this.info.style.mTitle = pxToRem(this.info.style.mTitle)
-          this.info.style.sTitle = pxToRem(this.info.style.sTitle)
-          this.info.style.chgFuncTitle = pxToRem(this.info.style.chgFuncTitle)
-          var vue = this
-          var callbackFn = function (res) {
-            vue.ids = res || []
-            vue.refresh()
-          }
-          getComData('grid2', this.info, callbackFn)
-        }
-      },*/
       getData() {
         this.getDataByInterface()
       },
@@ -222,5 +204,5 @@
 </script>
 
 <style lang="scss">
-  @import "./grid-two.scss";
+  @import "./grid-three.scss";
 </style>

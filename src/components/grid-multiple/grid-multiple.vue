@@ -31,7 +31,9 @@
 
 <script type="text/ecmascript-6">
   import {CalcStyle, UniqueFields} from '@/common/utils/utils'
-  import imgIcon from '@/../img/default-grid-icon.png'
+  import imgIcon from '../../../img/default-grid-icon.png'
+  import Axios from 'axios'
+  import Api from '@/data/api'
 
   const COMPONENT_NAME = 'cube-grid-multiple'
 
@@ -234,11 +236,11 @@
               {
                 type: this.info.interface.contentType,
                 categoryId: this.info.interface.categoryId,
-                fields: UniqueFields(this.info.interface.fields)
+                fields: UniqueFields(this.info.fields)
               }
             ]
           }
-          this.axios.post(this.api.gridMultiple, postData).then(
+          Axios.post(Api.gridMultiple, postData).then(
             (res) => {
               var data = res.data.data[0]
               var ids = []

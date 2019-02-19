@@ -98,7 +98,7 @@ window.ApiStruct = {
     }
   },
   gridTwo: {
-    url: 'http://10.1.5.52:11020/bis/index?com=grid2',
+    url: 'http://10.1.5.52:11020/bis/index',
     data: {
       "categoryIds": [
         {
@@ -222,6 +222,6 @@ window.ApiStruct = {
         }
       ]
     }
-  }
+  },
 }
 /* eslint-enable */

@@ -12,6 +12,7 @@ import GeneralText from './modules/general-text'
 import TitleBox from './modules/title-box'
 import GridMultiple from './modules/grid-multiple'
 import GridTwo from './modules/grid-two'
+import GridThree from './modules/grid-three'
 // import Loading from './modules/loading'
 // import Tip from './modules/tip'
 // import Toolbar from './modules/toolbar'
@@ -87,6 +88,7 @@ export {
   TitleBox,
   GridMultiple,
   GridTwo,
+  GridThree,
   // Loading,
   // Tip,
   // Toolbar,
