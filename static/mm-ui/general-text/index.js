@@ -773,6 +773,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   exports.GetParam = GetParam;
   exports.PxToRem = PxToRem;
   exports.Extend = Extend;
+  exports.UniqueFields = UniqueFields;
 
   var _assign2 = _interopRequireDefault(_assign);
 
@@ -843,6 +844,23 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
     }
     return des;
+  }
+
+  function UniqueFields(originFields) {
+    var fields = [];
+    for (var i in originFields) {
+      var flag = false;
+      for (var j = 0, len = fields.length; j < len; j++) {
+        if (originFields[i].key === fields[j]) {
+          flag = true;
+          break;
+        }
+      }
+      if (!flag) {
+        fields.push(originFields[i].key);
+      }
+    }
+    return fields;
   }
 });
 

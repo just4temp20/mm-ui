@@ -28,8 +28,8 @@ var files = fs.readdirSync(cPath)
 if (files) {
   files.forEach(function (name) {
     if(/button|recycle-list|index-list|background|act-wheel|act-rule|act-prize|general-text/gi.test(name)){
-      console.log('ww============================')
-      console.log(name)
+      // console.log('ww============================')
+      // console.log(name)
       var p = path.join(cPath, name)
       if (fs.statSync(p).isDirectory()) {
         modules[name] = p
@@ -38,8 +38,13 @@ if (files) {
   })
 }
 
-// console.log('------------modules:--------------')
-// console.log(modules)
+// console.log('------------ww:--------------')
+/*console.log(JSON.stringify(utils.styleLoaders({
+  sourceMap: config.build.productionSourceMap,
+  extract: {
+    publicPath: '../'
+  }
+})))*/
 var webpackConfig = merge(baseWebpackConfig, {
   entry: modules,
   module: {
@@ -62,5 +67,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     new ExtractTextPlugin(utils.assetsPath('[name]/style.css'))
   ]
 })
+// console.log('------------ww:--------------')
+// console.log(webpackConfig.module.rules)
 
 module.exports = webpackConfig

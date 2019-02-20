@@ -1,5 +1,5 @@
 <template>
-  <div class="card-grid m-module" :style="info.style.basic">
+  <div class="card-grid m-module" :style="styleBasic">
     <ul>
       <li v-for="item in curGrids">
         <a :href="item.content[info.fields.forwardUrl.key]">
@@ -118,6 +118,9 @@
         }
       }
     },
+    mounted() {
+      // this.getAllItem()
+    },
     methods: {
       /**
        * 按顺序更换
@@ -143,6 +146,20 @@
           this.curGrids = this.ids
         }
       },
+      /*getAllItem: function () {
+        if (JSON.stringify(this.config) !== '{}') {
+          this.$set(this, 'info', this.config || this.info)
+          this.info.style.mTitle = pxToRem(this.info.style.mTitle)
+          this.info.style.sTitle = pxToRem(this.info.style.sTitle)
+          this.info.style.chgFuncTitle = pxToRem(this.info.style.chgFuncTitle)
+          var vue = this
+          var callbackFn = function (res) {
+            vue.ids = res || []
+            vue.refresh()
+          }
+          getComData('grid2', this.info, callbackFn)
+        }
+      },*/
       getData() {
         this.getDataByInterface()
       },

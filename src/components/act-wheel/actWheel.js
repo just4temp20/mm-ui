@@ -1,6 +1,5 @@
 import $ from 'jquery'
 
-// (function(t, $){
 function a(t, param) {
   //配置参数
   this.configMap = {
@@ -222,8 +221,5 @@ a.prototype = {
 }
 
 // t.Rotary = a
-console.log('ww-actWheel.js-module=')
-console.log(module)
 
-// })(window, $);
 export default a

@@ -30,6 +30,6 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+  @import './css/test';
 </style>

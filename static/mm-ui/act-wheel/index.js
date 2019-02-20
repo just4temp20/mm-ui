@@ -1297,6 +1297,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   exports.GetParam = GetParam;
   exports.PxToRem = PxToRem;
   exports.Extend = Extend;
+  exports.UniqueFields = UniqueFields;
 
   var _assign2 = _interopRequireDefault(_assign);
 
@@ -1367,6 +1368,23 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
     }
     return des;
+  }
+
+  function UniqueFields(originFields) {
+    var fields = [];
+    for (var i in originFields) {
+      var flag = false;
+      for (var j = 0, len = fields.length; j < len; j++) {
+        if (originFields[i].key === fields[j]) {
+          flag = true;
+          break;
+        }
+      }
+      if (!flag) {
+        fields.push(originFields[i].key);
+      }
+    }
+    return fields;
   }
 });
 
@@ -12704,6 +12722,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   var url = 'http://117.131.17.174:8083';
   var urlBis = 'http://10.1.5.52:11020';
   var api = {
+    titleBox: '/bis/index?com=title',
+    gridMultiple: '/bis/index?com=gridMultiple',
+    gridTwo: '/bis/index?com=grid2',
+
     sendMsg: '/promactivity/sms/sendMsg',
     getKeyToken: '/promactivity/queryAct/getKeyToken',
     executeH5: '/promactivity/activityH5/executeH5',
@@ -12711,10 +12733,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     getPrizelist: '/bis/getAward',
     getActCount: '/bis/getActCount',
     sendMsg2: '/bis/send',
-    login2: '/bis/checkSMS',
-    gridMultiple: '/bis/index?com=gridMultiple',
-    title: '/bis/index?com=title'
-  };
+    login2: '/bis/checkSMS' };
 
   for (var key in api) {
     if (api[key].indexOf('/promactivity/') !== -1) {
