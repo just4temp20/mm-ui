@@ -1,0 +1,195 @@
+.rrx-common-dialog {
+  width: 3.5rem;
+  height: auto;
+  background-color: rgba(0, 0, 0, .8);
+  z-index: 2000;
+  position: absolute;
+  left: -0.15rem;
+  top: 0;
+  font-size: 0.12rem;
+  color: #797979;
+  .content-close {
+    position: relative;
+    left: 85%;
+    top: 2%;
+    width: 0.35rem;
+  }
+  .dialog-content {
+    width: 3rem;
+    height: 3.9rem;
+    position: relative;
+    background-color: #fff;
+    top: 0;
+    margin: 0 auto;
+    border-radius: 0.1rem;
+    .dialog-content-head {
+      border-radius: 0.1rem 0.1rem 0 0;
+      height: 0.4rem;
+      width: 100%;
+      position: absolute;
+      overflow: hidden;
+      border-bottom-color: #f2f2f2;
+      border-bottom-style: solid;
+      border-bottom-width: thin;
+      text-align: center;
+      line-height: 0.39rem;
+      font-size: 0.15rem;
+    }
+    .dialog-content-box {
+      width: 3rem;
+      height: 3.35rem;
+      position: absolute;
+      top: 0.4rem;
+      margin: 0 auto;
+    }
+
+  }
+  .bounceInUpAni{
+    animation: bounceInUp 1s ease 0s 1 both;
+  }
+  .scroll-list {
+    width: 100%;
+    .content-list {
+      width: 100%;
+      position: relative;
+      .common-box {
+        padding: 0.075rem;
+        margin-bottom: 0.05rem;
+        position: relative;
+        border-bottom: 1px solid #EEE;
+      }
+    }
+    .prize-box {
+      .prize-state {
+        display: inline-block;
+        text-align: center;
+        width: 0.7rem;
+        vertical-align: middle;
+      }
+      .prize-small-icon-box {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 0.05rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        text-align: center;
+        img {
+          max-width: 0.5rem;
+          max-height: 0.5rem;
+        }
+      }
+      .prize-info {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 0.05rem;
+        width: 1.5rem;
+        .prize-title {
+          width: 100%;
+        }
+      }
+      .prize-isdeleted-1 {
+        border: none;
+      }
+      .prize-state-0, .prize-state-2 {
+        border: 1px solid red;
+        border-radius: 0.025rem;
+        line-height: 0.2rem;
+      }
+      .prize-state-0, .prize-state-2, .prize-state-3, .prize-state-4 {
+        color: red;
+      }
+    }
+  }
+  .prize-over-tip {
+    font-size: 0.1rem;
+    color: red;
+  }
+
+}
+
+*, :after, :before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+/*动效*/
+@-webkit-keyframes bounceInUp {
+  0%,100%,60%,75%,90% {
+    -webkit-transition-timing-function: cubic-bezier(.215,.61,.355,1);
+    transition-timing-function: cubic-bezier(.215,.61,.355,1)
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0,-3000px,0);
+    transform: translate3d(0,-3000px,0)
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0,25px,0);
+    transform: translate3d(0,25px,0)
+  }
+
+  75% {
+    -webkit-transform: translate3d(0,-10px,0);
+    transform: translate3d(0,-10px,0)
+  }
+
+  90% {
+    -webkit-transform: translate3d(0,5px,0);
+    transform: translate3d(0,5px,0)
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0)
+  }
+}
+
+@keyframes bounceInUp {
+  0%,100%,60%,75%,90% {
+    -webkit-transition-timing-function: cubic-bezier(.215,.61,.355,1);
+    transition-timing-function: cubic-bezier(.215,.61,.355,1)
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0,-3000px,0);
+    transform: translate3d(0,-3000px,0)
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0,25px,0);
+    transform: translate3d(0,25px,0)
+  }
+
+  75% {
+    -webkit-transform: translate3d(0,-10px,0);
+    transform: translate3d(0,-10px,0)
+  }
+
+  90% {
+    -webkit-transform: translate3d(0,5px,0);
+    transform: translate3d(0,5px,0)
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0)
+  }
+}
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp
+}

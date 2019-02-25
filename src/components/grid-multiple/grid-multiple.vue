@@ -34,6 +34,7 @@
   import imgIcon from '../../../img/default-grid-icon.png'
   import Axios from 'axios'
   import Api from '@/data/api'
+  import '@/data/mock'
 
   const COMPONENT_NAME = 'cube-grid-multiple'
 

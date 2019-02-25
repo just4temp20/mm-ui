@@ -2,15 +2,18 @@
   <div class="m-module actPrize">
     <div class="record-incentive-container incentive" :style="styleBasic">
       <!--按钮-->
-      <div class="record-incentive" v-on:click="gotoPage" style="background-image: url(&quot;//yun.tuisnake.com/h5-mami/activity/components/incentive/gift.png?x-oss-process=image/format,webp&quot;);"></div>
+      <div class="record-incentive" v-on:click="showMyPrize" style="background-image: url(&quot;//yun.tuisnake.com/h5-mami/activity/components/incentive/gift.png?x-oss-process=image/format,webp&quot;);"></div>
       <!--背影-->
       <div class="record-s incentive-shadow"></div>
     </div>
+    <!--奖品弹框-->
+    <dialog-prize></dialog-prize>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import {CalcStyle} from '@/common/utils/utils'
+  import DialogPrize from '@/common/dialog/dialog-prize'
 
   const COMPONENT_NAME = 'cube-act-prize'
 
@@ -18,6 +21,9 @@
     name: COMPONENT_NAME,
     props: {
       config: Object
+    },
+    components: {
+      DialogPrize
     },
     data() {
       return {
@@ -38,8 +44,8 @@
       }
     },
     methods: {
-      gotoPage() {
-        window.location.href = 'http://baidu.com?actId=' + this.actId
+      showMyPrize() {
+        // window.location.href = 'http://baidu.com?actId=' + this.actId
       }
     }
   }
@@ -47,4 +53,5 @@
 
 <style lang="scss">
   @import "./act-prize.scss";
+  @import "./act-prize-dialog.scss";
 </style>

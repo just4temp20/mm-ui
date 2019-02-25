@@ -23,6 +23,7 @@
   import imgRefresh from '@/../img/icon-refresh.png'
   import Axios from 'axios'
   import Api from '@/data/api'
+  import '@/data/mock'
 
   const COMPONENT_NAME = 'cube-grid-three'
 
