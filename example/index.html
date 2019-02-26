@@ -10,7 +10,7 @@
   <link rel="shortcut icon" type="images/x-icon" href="//webapp.didistatic.com/static/webapp/shield/Cube-UI_logo.ico">
 </head>
 <body>
-<div id="app"></div>
+<div id="main"></div>
 <!--模块信息-->
 <script>
   /* eslint-disable */
@@ -20,7 +20,37 @@
     }
   }
   window.ModuleInfo = [
-    {
+    /*{
+      "moduleName": "cube-general-text2",
+      "moduleType": 999,
+      "exProperties": JSON.stringify({
+        "fields": {
+          "text": {"name": "通用文本", "default": "为每位业主都准备精美礼品一份", "key": ""},
+          "forwardUrl": {"name": "URL", "default": "http://m.baidu.com", "key": ""}
+        },
+        "fieldsDefault": {},
+        "style": {
+          "text": {
+            "color": "#5E1010",
+            "fontSize": "26px",
+            "fontWeight": "normal",
+            "fontStyle": "normal",
+            "textAlign": "center",
+            "textDecoration": "none"
+          },
+          "basic": {
+            "left": "0px",
+            "top": "139px",
+            "width": "320px",
+            "height": "40px",
+            "zIndex": "100",
+            "originWidth": "287px"
+          }
+        },
+        "isEditZIndex": false
+      })
+    },*/
+/*    {
       "moduleName": "cube-background",
       "exProperties": JSON.stringify({
         "fields": {
@@ -29,7 +59,7 @@
         }, "isEditZIndex": false
       })
     },
-    /*{
+    {
       "moduleName": "cube-act-wheel",
       "exProperties": JSON.stringify({
         "fields": {
@@ -86,7 +116,7 @@
         },
         "isEditZIndex": false
       })
-    },*/
+    },
     {
       "moduleName": "cube-act-rule",
       "exProperties": JSON.stringify({
@@ -199,7 +229,7 @@
         "isEditZIndex": false
       })
     },
-    /*{
+    {
       "moduleName": "cube-grid-multiple",
       "moduleType": 4,
       "exProperties": JSON.stringify({
@@ -281,7 +311,7 @@
           ]
         },
       }),
-    },*/
+    },
     {
       "moduleName": "cube-grid-two",
       "exProperties": JSON.stringify({
@@ -345,7 +375,7 @@
         }
       }),
     },
-    /*{
+    {
       "moduleName": "cube-grid-three",
       "moduleType": 4,
       "exProperties": JSON.stringify({
@@ -422,5 +452,8 @@
   window.Vue.use(window.cube['act-prize'])
   window.Vue.use(window.cube['general-text'])
 </script>-->
+<!--iscroll-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/static/lib/iScroll.js"></script>
 </body>
 </html>

@@ -1,0 +1,236 @@
+@import "./animation";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #fff;
+  font-size: 0;
+}
+#app {
+  overflow: hidden
+}
+.m-module {
+  position: absolute
+}
+#main {
+  margin: 0 auto;
+}
+#win-alert-dialog{
+  color: #9E9E9E;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: none;
+  overflow: hidden;
+  background-color: rgba(0,0,0,.22);
+}
+#rrx-process-dialog {
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  position: absolute;
+  display: none;
+  font-family: '微软雅黑','microsoft yahei','宋体','新宋体',sans-serif;
+
+}
+.pt-outer {
+  .pt-inner{
+    width: 640px;
+    height: 1100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -320px;
+    margin-top: -550px;
+  }
+}
+.pt-floorpage, .pt-loadingpage, .pt-pagelist, .pt-sharepage{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.pt-sharepage{
+  display: none;
+  z-index: 10000;
+}
+.share-poster-process-dialog{
+  width: 100%;
+  height: 100%;
+  z-index: 7010;
+  left: 0;
+  top: 0;
+  position: absolute;
+  display: none;
+  .dialog-container{
+    margin: 40% auto 0;
+    width: 14em;
+    height: 13em;
+    border-radius: 8px;
+    background-color: rgba(40,40,40,.75);
+    //background-image: url(../images/loading.gif);
+    position: relative;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: 25%;
+    color: #FFF;
+  }
+  .dialog-container-process{
+    width: 100%;
+    font-size: 28px;
+    text-align: center;
+    position: absolute;
+    bottom: 25px;
+  }
+  .pt-preview-notice{
+    display: none;
+    opacity: .8;
+    padding: 20px;
+    background: #666;
+    color: #fff;
+    width: 100%;
+    font-size: 32px;
+    z-index: 100000;
+    text-align: center;
+  }
+}
+.pt-page, .pt-preview-notice{
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+.pt-pagewrapper, .pt-wrapper {
+  position: relative;
+  width: 100%;
+}
+.pt-code, .pt-page, .pt-page-current .element[eletype=plugin] .element-last>div[class|=plugin], .pt-report{
+  height: 100%;
+}
+.rrx-icon-close-layer, .rrx-icon-close-pull, .rrx-icon-danmu-close, .rrx-icon-danmu-like, .rrx-icon-danmu-open, .rrx-icon-danmu-share, .rrx-icon-report, .rrx-icon-share, .rrx-icon-share-friend, .rrx-icon-share-poster, .rrx-icon-share-timeline, .rrx-icon-sidle-cart, .rrx-icon-sidle-danmu{
+  background-image: url(https://view4.rrxiu.net/images/icon/spritesheet1545126567492.png?v=1545126567492);
+}
+.pt-wrapper{
+  height: 100%;
+  overflow: hidden;
+  .arrow-down, .arrow-right{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 150;
+    width: 160px;
+    height: 160px;
+    visibility: visible;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    pointer-events: none!important;
+    display: none;
+    p{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-animation: ani-arrow 1.5s infinite ease-in-out;
+      -moz-animation: ani-arrow 1.5s infinite ease-in-out;
+      animation: ani-arrow 1.5s infinite ease-in-out;
+      margin: -14px 0 0 -48px;
+      width: 96px;
+      height: 96px;
+      //background-image: url(../images/icon_arrow2.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
+  .arrow-right{
+    right: 0;
+    left: auto;
+    bottom: 50%;
+    -webkit-transform: rotate(-90deg)translate(-50%,0);
+    transform: rotate(-90deg)translate(-50%,0);
+  }
+  .music{
+    display: none;
+    //background-image: url(../images/icon_music_off2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 58px;
+    height: 58px;
+    position: absolute;
+    z-index: 999;
+  }
+  .sidle-plugin-msg, .sidle-report, .sidle-share{
+    position: absolute;
+    z-index: 999;
+  }
+  .rrx-icon-share{
+    background-position: 0 -314px;
+    width: 59px;
+    height: 59px;
+  }
+  .sidle-share{
+    display: none;
+    right: 23px;
+    top: 11%;
+  }
+  .rrx-icon-report{
+    background-position: -252px -220px;
+    width: 59px;
+    height: 59px;
+  }
+  .sidle-report{
+    display: none;
+    right: 23px;
+    top: 19%;
+  }
+  .rrx-icon-msg{
+    background-image: url(https://view4.rrxiu.net/images/icon/spritesheet1545126567492.png?v=1545126567492);
+    background-position: -69px -314px;
+    width: 59px;
+    height: 59px;
+  }
+  .sidle-plugin-msg{
+    display: none;
+    right: 23px;
+    top: 27%;
+  }
+  .pt-pagewrapper{
+    height: 100%;
+    z-index: 1;
+    background-color: #fff;
+    .pt-pagelist{
+      .pt-page{
+        width: 100%;
+        z-index: 0;
+        /* display: none; */
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        font-size: 30px;
+        .iscroll_wrapper, .normal_wrapper{
+          overflow: hidden;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .pt-page-current{
+        display: block;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+
+
+
