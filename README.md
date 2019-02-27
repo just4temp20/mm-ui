@@ -77,6 +77,7 @@ npm run demo-build是用于生成速推的
 1、不要用stylu,dev编译时很慢，严重影响开发效率
 2、用new RegExp()为何会时而true时而false的？直接用//gi.test就不会
 3、body的font-size设置为0，才不会出现子元素不在父元素内部的问题
+4、module里的文件命名是index.js，而不是对应的名字
 
 Recommend use the [CLI tools](https://github.com/cube-ui/cube-template) base on [vue-cli](https://github.com/vuejs/vue-cli) to init the config and base code:
 

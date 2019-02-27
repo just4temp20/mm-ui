@@ -8,7 +8,7 @@ var baseWebpackConfig = require('./webpack.base.conf')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 //  ww:只考虑我的module
-var regName = new RegExp(/button|recycle-list|index-list|background|act-wheel|act-rule|act-prize|general-text/, "gi")
+// var regName = new RegExp(/button|recycle-list|index-list|background|act-wheel|act-rule|act-prize|general-text|general-text-two/, "gi")
 
 
 var modules = {}
@@ -27,7 +27,7 @@ var files = fs.readdirSync(cPath)
 // console.log(files)
 if (files) {
   files.forEach(function (name) {
-    if(/button|recycle-list|index-list|background|act-wheel|act-rule|act-prize|general-text/gi.test(name)){
+    if(/button|recycle-list|index-list|background|act-wheel|act-rule|act-prize|general-text|general-text-two|general-image/gi.test(name)){
       // console.log('ww============================')
       // console.log(name)
       var p = path.join(cPath, name)

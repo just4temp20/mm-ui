@@ -5,11 +5,13 @@ import Style from './modules/style'
 // Basic
 import Button from './modules/button'
 import Background from './modules/background'
+import BackgroundTwo from './modules/background-two'
 import ActWheel from './modules/act-wheel'
 import ActRule from './modules/act-rule'
 import ActPrize from './modules/act-prize'
 import GeneralText from './modules/general-text'
-// import GeneralTextTwo from './modules/general-text-two'
+import GeneralTextTwo from './modules/general-text-two'
+import GeneralImage from './modules/general-image'
 import TitleBox from './modules/title-box'
 import GridMultiple from './modules/grid-multiple'
 import GridTwo from './modules/grid-two'
@@ -82,11 +84,13 @@ export {
   // basic
   Button,
   Background,
+  BackgroundTwo,
   ActWheel,
   ActRule,
   ActPrize,
   GeneralText,
-  // GeneralTextTwo,
+  GeneralTextTwo,
+  GeneralImage,
   TitleBox,
   GridMultiple,
   GridTwo,

@@ -16,13 +16,13 @@
               <div class="pt-page page_1 pt-page-current" data-id="1" data-long="1"
                    style="transition: none 0s ease 0s;">
                 <div class="pt-page-bg-box"
-                     style="width: 100%; height: 100%; cursor: default; opacity: 1; background-color: rgb(228, 50, 56);"></div>
+                     style="width: 100%; height: 100%; cursor: default;" :style="PageInfo.style.backgroundColor"></div>
                 <!--iscroll-->
                 <div class="iscroll_wrapper" id="iscroll_wrapper1" style="overflow: hidden;" ref="iscroll_wrapper1">
                   <div class="pt-page-element-list-box"
                        style="width: 100%; height: 1512px; transform-origin: 0px 0px; position: absolute; top: 0px; left: 0px;">
                     <!--组件-->
-                    <div class="element element_11 fadeInRight"
+                    <!--<div class="element element_11 fadeInRight"
                          style="position: absolute; left: 127px; top: 316px; width: 450px; height: 41px; z-index: 19; display: block; animation: fadeInRight 1s ease 1.4s 1 normal both running;"
                          eletype="div" data-id="11" id="inner_text_eidtor_11">
                       <div
@@ -117,11 +117,11 @@
                         </div>
                       </div>
                     </div>
-                    <div class="element element_pagebg" style="position: absolute; left: 0px; top: 0px; z-index: 0; min-width: 640px; height: 100%; width: 100%; opacity: 1;"><img class="pagebg_img" src="https://file2.rrxh5.cc/g2/c1/2019/02/26/1551166202653.jpg@!user_image_500x1" style="width: 640px; height: 1008px; margin-left: 0px; margin-top: 0px;"></div>
+                    <div class="element element_pagebg" style="position: absolute; left: 0px; top: 0px; z-index: 0; min-width: 640px; height: 100%; width: 100%; opacity: 1;"><img class="pagebg_img" src="https://file2.rrxh5.cc/g2/c1/2019/02/26/1551166202653.jpg@!user_image_500x1" style="width: 640px; height: 1008px; margin-left: 0px; margin-top: 0px;"></div>-->
 
                     <!--动态生成-->
-                    <!--<component v-for="(item, index) in ModuleInfo" :is="item.moduleName"
-                               :config="JSON.parse(item.exProperties)"></component>-->
+                    <component v-for="(item, index) in ModuleInfo" :is="item.moduleName"
+                               :config="JSON.parse(item.exProperties)" :class="'element_' + index" :data-id="index" :id="'inner_text_eidtor_' + index"></component>
                   </div>
                 </div>
               </div>
@@ -190,6 +190,7 @@
     components: {},
     data() {
       return {
+        PageInfo: window.PageInfo,
         ModuleInfo: window.ModuleInfo
       }
     },
